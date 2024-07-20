@@ -13,15 +13,16 @@ const PORT = process.env.PORT || 3000;
 AppDataSource.initialize().then(async () => {
 
     // create express app
-    const app = express();
+    const app = express()
     app.use(cors());
     app.use(helmet());
     app.use(express.json());
 
     //rutas
-    app.use('/', routes);
+    app.use('/',routes);
 
     // start express server
-    app.listen(PORT,() => {console.log(`El servidor ha sido levantado en https://localhost:${PORT}`)});
+    app.listen(PORT,()=>{ console.log(`El servidor ha sido levantado en el puerto https://localhost:${PORT}`)})
+   
 
 }).catch(error => console.log(error))
